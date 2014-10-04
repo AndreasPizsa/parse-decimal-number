@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/AndreasPizsa/parse-decimal-number",
   "devDependencies": {
+    "coffee-script": "^1.8.0",
     "gulp": "^3.8.8",
     "gulp-blanket-mocha": "0.0.4",
     "gulp-coffee": "^2.2.0",
