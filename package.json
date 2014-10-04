@@ -1,0 +1,48 @@
+{
+  "name": "parse-decimal-number",
+  "version": "0.0.1",
+  "description": "Parse a decimal number with i18n format support (localized decimal points and thousands separators)",
+  "main": "./dist/parse-decimal-number.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreasPizsa/parse-decimal-number.git"
+  },
+  "keywords": [
+    "parse",
+    "number",
+    "float",
+    "decimal",
+    "i18n",
+    "l11n",
+    "localized",
+    "international",
+    "format",
+    "convert",
+    "integer",
+    "localized",
+    "points",
+    "comma",
+    "separators"
+  ],
+  "author": "Andreas Pizsa (http://github.com/AndreasPizsa)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreasPizsa/parse-decimal-number/issues"
+  },
+  "homepage": "https://github.com/AndreasPizsa/parse-decimal-number",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-blanket-mocha": "0.0.4",
+    "gulp-coffee": "^2.2.0",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-mocha": "^1.1.0",
+    "gulp-uglifyjs": "^0.4.3",
+    "gulp-util": "^3.0.1",
+    "gulp-verb": "^0.3.0",
+    "lodash": "^2.4.1",
+    "verb": "^0.2.15"
+  }
+}
