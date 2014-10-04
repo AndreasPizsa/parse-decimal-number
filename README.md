@@ -8,11 +8,11 @@ OK, let’s fix international numbers **parsing** and **validation** once and fo
 
 These are the design goals:
 
-* **Simple.** String in, float out, done.
-* **Lightweight.** (0.5k minified)
-* **Accurate.** Parses numbers and returns `NaN` for non-numbers. (=great for UI validation)
-* **Complete.** No external dependencies
-* **Reliable.** 100% Code Coverage
+* **Simple.** String in, float out, done. ✓
+* **Accurate.** Parses numbers and returns `NaN` for non-numbers. (=good for input validation) ✓
+* **Lightweight.** (<1k minified) ✓
+* **Complete.** No external dependencies ✓
+* **Solid.** 100% Code Coverage ✓
 
 In it’s simplest form, you just use it as a `parseFloat` replacement.
 
