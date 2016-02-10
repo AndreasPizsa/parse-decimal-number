@@ -4,11 +4,14 @@
   "description": "Parse a decimal number with i18n format support (localized decimal points and thousands separators)",
   "main": "./dist/parse-decimal-number.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp coveralls"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/AndreasPizsa/parse-decimal-number.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "parse",
