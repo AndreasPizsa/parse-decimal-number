@@ -18,7 +18,7 @@ module.exports = (value,inOptions)->
   patternIndex = "#{thousands}#{decimal}"
   pattern = patterns[patternIndex]
   if not pattern
-    pattern = patterns[patternIndex] = new RegExp ('^\\s*((?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*)(?:\\' + decimal + '(\\d*))?\\s*$')
+    pattern = patterns[patternIndex] = new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
 
   result = value.match pattern
   return NaN if not result or result.length != 3

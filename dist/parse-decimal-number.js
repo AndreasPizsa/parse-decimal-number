@@ -32,7 +32,7 @@
     patternIndex = "" + thousands + decimal;
     pattern = patterns[patternIndex];
     if (!pattern) {
-      pattern = patterns[patternIndex] = new RegExp('^\\s*((?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*)(?:\\' + decimal + '(\\d*))?\\s*$');
+      pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
     }
     result = value.match(pattern);
     if (!result || result.length !== 3) {
@@ -40,7 +40,7 @@
     }
     integerPart = result[1].replace(new RegExp("\\" + thousands, 'g'), '');
     fractionPart = result[2];
-    number = parseFloat("" + integerPart + "." + fractionPart);
+    number = parseFloat(integerPart + "." + fractionPart);
     return number;
   };
 
