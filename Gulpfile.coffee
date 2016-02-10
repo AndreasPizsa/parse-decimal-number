@@ -1,11 +1,12 @@
-coffee  = require 'gulp-coffee'
-gulp    = require 'gulp'
-gutil   = require 'gulp-util'
-istanbul= require 'gulp-istanbul'
-mocha   = require 'gulp-mocha'
-path    = require 'path'
-uglify  = require 'gulp-uglifyjs'
-verb    = require 'gulp-verb'
+coffee    = require 'gulp-coffee'
+coveralls = require 'gulp-coveralls'
+gulp      = require 'gulp'
+gutil     = require 'gulp-util'
+istanbul  = require 'gulp-istanbul'
+mocha     = require 'gulp-mocha'
+path      = require 'path'
+uglify    = require 'gulp-uglifyjs'
+verb      = require 'gulp-verb'
 
 destDir = path.dirname require('./package.json').main
 
@@ -23,6 +24,10 @@ gulp.task 'test', ['compile'], ->
       reporter: 'spec'
     .pipe istanbul.writeReports()
 
+gulp.task 'coveralls', ['test'], ->
+  gulp.src 'coverage/**/lcov.info'
+  .pipe coveralls()
+
 gulp.task 'compile',->
   gulp.src './src/*.{coffee,litcoffee}'
     .pipe coffee bare:false
@@ -31,4 +36,4 @@ gulp.task 'compile',->
     .pipe uglify(path.basename(require('./package.json').main).replace('.js','.min.js'))
     .pipe gulp.dest destDir
 
-gulp.task 'default', ['compile','test', 'docs']
+gulp.task 'default', ['compile','test', 'coveralls', 'docs']
