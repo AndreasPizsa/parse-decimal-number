@@ -25,6 +25,8 @@ Returns a `float` representation of _string_ or `NaN` if _string_ is not a parse
   * **`thousands`** thousands separator character. _Default:_ `,`
   * **`decimal`** decimal point character. _Default:_ `.`
 
+**enforceGroupSize** A boolean indicating whether to support that individual groups between the thousands character are exactly 3 digits
+
 ### Examples
 
 ```javascript

@@ -85,6 +85,12 @@ describe 'parse-decimal-number',->
   it 'accepts a two-element array as options', ->
     assert.strictEqual parseDecimalNumber('123,456.78', [',','.']), 123456.78
 
+  it 'returns NaN if group size is not three', ->
+    assert.strictEqual _.isNaN(parseDecimalNumber('12,34,567.22', [',','.'])), true
+
+  it 'does not NaN if group size is not three but enforceGroupSize is false', ->
+    assert.strictEqual parseDecimalNumber('12,34,567.22', [',','.'], false), 1234567.22
+
   it 'throws an error if an array with a length other than two is used as options argument', ->
     assert.throws -> parseDecimalNumber('123,456.78', [',','.','#'])
     assert.throws -> parseDecimalNumber('123,456.78', [','])

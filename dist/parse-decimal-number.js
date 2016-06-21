@@ -5,8 +5,11 @@
 
   options = {};
 
-  module.exports = function(value, inOptions) {
+  module.exports = function(value, inOptions, enforceGroupSize) {
     var decimal, fractionPart, integerPart, number, pattern, patternIndex, result, thousands;
+    if (enforceGroupSize == null) {
+      enforceGroupSize = true;
+    }
     if (typeof inOptions === 'string') {
       if (inOptions.length !== 2) {
         throw {
@@ -29,10 +32,14 @@
       thousands = (inOptions != null ? inOptions.thousands : void 0) || options.thousands;
       decimal = (inOptions != null ? inOptions.decimal : void 0) || options.decimal;
     }
-    patternIndex = "" + thousands + decimal;
+    patternIndex = "" + thousands + decimal + enforceGroupSize;
     pattern = patterns[patternIndex];
     if (!pattern) {
-      pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
+      if (enforceGroupSize) {
+        pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
+      } else {
+        pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
+      }
     }
     result = value.match(pattern);
     if (!result || result.length !== 3) {

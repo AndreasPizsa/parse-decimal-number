@@ -1,7 +1,7 @@
 patterns=[]
 options ={}
 
-module.exports = (value,inOptions)->
+module.exports = (value,inOptions,enforceGroupSize=true)->
 
   if typeof inOptions is 'string'
     if inOptions.length isnt 2 then throw {name:'ArgumentException',message:'The format for string options is \'<thousands><decimal>\' (exactly two characters)'}
@@ -15,10 +15,13 @@ module.exports = (value,inOptions)->
     thousands = inOptions?.thousands or options.thousands
     decimal   = inOptions?.decimal    or options.decimal
 
-  patternIndex = "#{thousands}#{decimal}"
+  patternIndex = "#{thousands}#{decimal}#{enforceGroupSize}"
   pattern = patterns[patternIndex]
   if not pattern
-    pattern = patterns[patternIndex] = new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
+    if enforceGroupSize
+      pattern = patterns[patternIndex] =  new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
+    else
+      pattern = patterns[patternIndex] =  new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
 
   result = value.match pattern
   return NaN if not result or result.length != 3
