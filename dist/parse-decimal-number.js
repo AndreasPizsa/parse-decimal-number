@@ -36,14 +36,14 @@
     pattern = patterns[patternIndex];
     if (!pattern) {
       if (enforceGroupSize) {
-        pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
+        pattern = patterns[patternIndex] = new RegExp('^\\s*([+\-]?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
       } else {
-        pattern = patterns[patternIndex] = new RegExp('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
+        pattern = patterns[patternIndex] = new RegExp('^\\s*([+\-]?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$');
       }
     }
     result = value.match(pattern);
     if (!result || result.length !== 3) {
-      return NaN;
+      return 0/0;
     }
     integerPart = result[1].replace(new RegExp("\\" + thousands, 'g'), '');
     fractionPart = result[2];
