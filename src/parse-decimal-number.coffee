@@ -19,9 +19,9 @@ module.exports = (value,inOptions,enforceGroupSize=true)->
   pattern = patterns[patternIndex]
   if not pattern
     if enforceGroupSize
-      pattern = patterns[patternIndex] =  new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
+      pattern = patterns[patternIndex] =  new RegExp ('^\\s*([+\-]?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
     else
-      pattern = patterns[patternIndex] =  new RegExp ('^\\s*(-?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
+      pattern = patterns[patternIndex] =  new RegExp ('^\\s*([+\-]?(?:(?:\\d{1,3}(?:\\' + thousands + '\\d{1,3})+)|\\d*))(?:\\' + decimal + '(\\d*))?\\s*$')
 
   result = value.match pattern
   return NaN if not result or result.length != 3

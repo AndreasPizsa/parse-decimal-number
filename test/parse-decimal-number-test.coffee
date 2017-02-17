@@ -60,6 +60,9 @@ describe 'parse-decimal-number',->
   it 'correctly parses negative floats with default options',->
     assert.strictEqual parseDecimalNumber('-12345679.09'),-12345679.09
 
+  it 'correctly parses positive floats beginning with +', ->
+    assert.strictEqual parseDecimalNumber('+12345679.09'),12345679.09
+
   it 'correctly parses all decimal formats',->
     testAllNumbers 999999999,true
 
