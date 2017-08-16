@@ -101,14 +101,14 @@ has the same effect as `parseDecimalNumber.setOptions({thousands:',',decimal:'.'
 If you use `numeral` in your project, you can use their locale data as follows:
 
 ```javascript
-parseDecimalNumber('12.345.678,90', numeral.countryData('de').delimiters);
+parseDecimalNumber('12.345.678,90', numeral.localeData('de').delimiters);
 // -> 12345678.9
 ```
 
 You can of course use the same data to set the default values for `parse-decimal-number`:
 
 ```javascript
-parseDecimalNumber.setOptions(numeral.countryData('de').delimiters);
+parseDecimalNumber.setOptions(numeral.localeData('de').delimiters);
 parseDecimalNumber('12.345.678,90');
 // -> 12345678.9
 ```
@@ -135,9 +135,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Author
 
 **Andreas Pizsa (http://github.com/AndreasPizsa)**
- 
+
 + [github/AndreasPizsa](https://github.com/AndreasPizsa)
-+ [twitter/AndreasPizsa](http://twitter.com/AndreasPizsa) 
++ [twitter/AndreasPizsa](http://twitter.com/AndreasPizsa)
 
 ## License
 Copyright (c) 2016 Andreas Pizsa (http://github.com/AndreasPizsa), contributors.  
