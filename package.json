@@ -50,7 +50,7 @@
     "gulp-coveralls": "0.1.4",
     "gulp-istanbul": "0.10.4",
     "gulp-mocha": "4.3.1",
-    "gulp-uglifyjs": "0.4.4",
+    "gulp-uglifyjs": "0.6.2",
     "gulp-util": "3.0.8",
     "gulp-verb": "0.3.0",
     "lodash": "4.17.4",
