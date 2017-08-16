@@ -42,18 +42,18 @@
   },
   "homepage": "https://github.com/AndreasPizsa/parse-decimal-number",
   "devDependencies": {
-    "cldr": "^4.5.0",
-    "coffee-script": "^1.8.0",
-    "gulp": "^3.9.1",
+    "cldr": "4.5.0",
+    "coffee-script": "1.12.7",
+    "gulp": "3.9.1",
     "gulp-blanket-mocha": "0.0.4",
-    "gulp-coffee": "^2.2.0",
-    "gulp-coveralls": "^0.1.4",
-    "gulp-istanbul": "^0.3.1",
+    "gulp-coffee": "2.3.4",
+    "gulp-coveralls": "0.1.4",
+    "gulp-istanbul": "0.3.1",
     "gulp-mocha": "4.3.1",
-    "gulp-uglifyjs": "^0.4.3",
-    "gulp-util": "^3.0.1",
-    "gulp-verb": "^0.3.0",
-    "lodash": "*",
-    "verb": "^0.8.10"
+    "gulp-uglifyjs": "0.4.4",
+    "gulp-util": "3.0.8",
+    "gulp-verb": "0.3.0",
+    "lodash": "4.17.4",
+    "verb": "0.8.10"
   }
 }
