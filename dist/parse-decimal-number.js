@@ -1,11 +1,11 @@
 (function() {
-  var options, patterns;
+  var options, parseDecimalNumber, patterns;
 
   patterns = [];
 
   options = {};
 
-  module.exports = function(value, inOptions, enforceGroupSize) {
+  module.exports = parseDecimalNumber = function(value, inOptions, enforceGroupSize) {
     var decimal, fractionPart, groupMinSize, integerPart, number, pattern, patternIndex, result, thousands;
     if (enforceGroupSize == null) {
       enforceGroupSize = true;
@@ -27,7 +27,7 @@
       }
       thousands = inOptions[0], decimal = inOptions[1];
     } else {
-      thousands = (inOptions != null ? inOptions.thousands : void 0) || options.thousands;
+      thousands = (inOptions != null ? inOptions.thousands : void 0) || (inOptions != null ? inOptions.group : void 0) || options.thousands;
       decimal = (inOptions != null ? inOptions.decimal : void 0) || options.decimal;
     }
     patternIndex = "" + thousands + decimal + enforceGroupSize;
@@ -58,6 +58,15 @@
     options = {
       thousands: ',',
       decimal: '.'
+    };
+  };
+
+  module.exports.withOptions = function(options, enforceGroupSize) {
+    if (enforceGroupSize == null) {
+      enforceGroupSize = true;
+    }
+    return function(value) {
+      return parseDecimalNumber(value, options, enforceGroupSize);
     };
   };
 

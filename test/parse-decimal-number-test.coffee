@@ -98,3 +98,22 @@ describe 'parse-decimal-number',->
   it 'throws an error if an array with a length other than two is used as options argument', ->
     assert.throws -> parseDecimalNumber('123,456.78', [',','.','#'])
     assert.throws -> parseDecimalNumber('123,456.78', [','])
+
+  describe '`.withOptions`', ->
+    [
+      ['.,', '1.234.567,89']
+      [',.', '1,234,567.89']
+    ].forEach ([options, expect]) ->
+      it "can parse with #{options}", ->
+        parse = parseDecimalNumber.withOptions options
+        assert.strictEqual parse(expect), 1234567.89
+
+  describe 'cldr support', ->
+    cldr = require 'cldr'
+    [
+      ['de_DE', '1.234.567,89']
+      ['en_US', '1,234,567.89']
+    ].forEach ([locale, expect]) ->
+
+      it "parses #{locale}", ->
+        assert.strictEqual parseDecimalNumber(expect, cldr.extractNumberSymbols(locale)), 1234567.89

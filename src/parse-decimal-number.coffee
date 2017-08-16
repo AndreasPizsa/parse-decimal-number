@@ -1,7 +1,7 @@
 patterns=[]
 options ={}
 
-module.exports = (value,inOptions,enforceGroupSize=true)->
+module.exports = parseDecimalNumber = (value,inOptions,enforceGroupSize=true)->
 
   if typeof inOptions is 'string'
     if inOptions.length isnt 2 then throw {name:'ArgumentException',message:'The format for string options is \'<thousands><decimal>\' (exactly two characters)'}
@@ -10,7 +10,7 @@ module.exports = (value,inOptions,enforceGroupSize=true)->
     if inOptions.length isnt 2 then throw {name:'ArgumentException',message:'The format for array options is [\'<thousands>\',\'[<decimal>\'] (exactly two elements)'}
     [thousands, decimal] = inOptions
   else
-    thousands = inOptions?.thousands or options.thousands
+    thousands = inOptions?.thousands or inOptions?.group or options.thousands
     decimal   = inOptions?.decimal   or options.decimal
 
   patternIndex = "#{thousands}#{decimal}#{enforceGroupSize}"
@@ -36,5 +36,8 @@ module.exports.factoryReset = ->
     thousands : ','
     decimal   : '.'
   return
+
+module.exports.withOptions = (options, enforceGroupSize=true)->
+  (value) -> parseDecimalNumber value, options, enforceGroupSize
 
 module.exports.factoryReset()

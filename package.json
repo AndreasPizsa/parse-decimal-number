@@ -6,7 +6,7 @@
   "scripts": {
     "test": "gulp coveralls"
   },
-  "files" : [
+  "files": [
     "dist",
     "README.md",
     "LICENSE"
@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/AndreasPizsa/parse-decimal-number",
   "devDependencies": {
+    "cldr": "^4.5.0",
     "coffee-script": "^1.8.0",
     "gulp": "^3.9.1",
     "gulp-blanket-mocha": "0.0.4",
