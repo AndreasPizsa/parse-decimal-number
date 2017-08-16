@@ -35,7 +35,8 @@ buildNumber = (max,doFraction,separators)->
 testAllNumbers = (maxInt,toFractions)->
   for separators in localSeparators
     number = buildNumber maxInt,toFractions,separators
-    assert.strictEqual parseDecimalNumber(number.text, separators),number.number
+    it "correctly parses #{number.text} (#{number.number})", ->
+      assert.strictEqual parseDecimalNumber(number.text, separators),number.number
 
 describe 'parse-decimal-number',->
   beforeEach ->
@@ -63,16 +64,16 @@ describe 'parse-decimal-number',->
   it 'correctly parses positive floats beginning with +', ->
     assert.strictEqual parseDecimalNumber('+12345679.09'),12345679.09
 
-  it 'correctly parses all decimal formats',->
+  describe 'correctly parses all decimal formats',->
     testAllNumbers 999999999,true
 
-  it 'correctly parses all integer formats',->
+  describe 'correctly parses all integer formats',->
     testAllNumbers 999999999,false
 
-  it 'correctly parses all decimal formats < 1000',->
+  describe 'correctly parses all decimal formats < 1000',->
     testAllNumbers 1000,true
 
-  it 'correctly parses all integer formats < 1000',->
+  describe 'correctly parses all integer formats < 1000',->
     testAllNumbers 1000,false
 
   it 'returns NaN if a value can\'t be parsed', ->

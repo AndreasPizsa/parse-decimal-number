@@ -1,11 +1,16 @@
 {
   "name": "parse-decimal-number",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Parse a decimal number with i18n format support (localized decimal points and thousands separators)",
   "main": "./dist/parse-decimal-number.js",
   "scripts": {
     "test": "gulp coveralls"
   },
+  "files" : [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AndreasPizsa/parse-decimal-number.git"

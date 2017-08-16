@@ -11,6 +11,7 @@ verb      = require 'gulp-verb'
 destDir = path.dirname require('./package.json').main
 
 gulp.task 'docs', ->
+  # sadly, verb is broken
   gulp.src ['.verbrc.md']
     .pipe verb dest:'README.md'
     .pipe gulp.dest './'
@@ -36,4 +37,4 @@ gulp.task 'compile',->
     .pipe uglify(path.basename(require('./package.json').main).replace('.js','.min.js'))
     .pipe gulp.dest destDir
 
-gulp.task 'default', ['compile','test', 'coveralls', 'docs']
+gulp.task 'default', ['compile','test', 'coveralls'] #, 'docs'
