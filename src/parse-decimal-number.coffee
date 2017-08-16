@@ -28,7 +28,7 @@ module.exports = (value,inOptions,enforceGroupSize=true)->
   return number
 
 module.exports.setOptions = (newOptions)->
-  Object.assign options, newOptions
+  options[key] = value for key, value of newOptions
   return
 
 module.exports.factoryReset = ->
