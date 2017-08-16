@@ -47,7 +47,11 @@
   };
 
   module.exports.setOptions = function(newOptions) {
-    Object.assign(options, newOptions);
+    var key, value;
+    for (key in newOptions) {
+      value = newOptions[key];
+      options[key] = value;
+    }
   };
 
   module.exports.factoryReset = function() {
