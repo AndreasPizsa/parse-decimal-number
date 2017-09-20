@@ -1,6 +1,7 @@
 # parse-decimal-number ![Travis](https://img.shields.io/travis/AndreasPizsa/parse-decimal-number.svg?style=flat-square) [![Coverage Status](https://img.shields.io/coveralls/AndreasPizsa/parse-decimal-number.svg?style=flat-square)](https://coveralls.io/github/AndreasPizsa/parse-decimal-number?branch=master) ![Downloads](https://img.shields.io/npm/dm/parse-decimal-number.svg?style=flat-square)
 > Parse a decimal number with i18n format support (localized decimal points and thousands separators)
 
+
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number'>
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number.svg' />
 </a>
@@ -18,7 +19,6 @@ These are the design goals:
 * **CLDR Support.** Supports `cldr` data ✓
 
 In it’s simplest form, you just use it as a `parseFloat` replacement.
-
 
 ## Install
 #### Install with [npm](npmjs.org)
@@ -179,6 +179,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2017 Andreas Pizsa (http://github.com/AndreasPizsa), contributors.  
 
+## Sponsor
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number'>
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number.svg' />
 </a>
