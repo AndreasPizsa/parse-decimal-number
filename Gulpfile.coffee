@@ -23,6 +23,7 @@ gulp.task 'test', ['compile'], ->
     gulp.src './test/*.{js,coffee,litcoffee}', read:false
     .pipe mocha
       reporter: 'spec'
+      compilers: 'coffee:coffee-script/register'
     .pipe istanbul.writeReports()
 
 gulp.task 'coveralls', ['test'], ->
