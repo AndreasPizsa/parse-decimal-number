@@ -2,11 +2,6 @@
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number?ref=badge_shield)
 > Parse a decimal number with i18n format support (localized decimal points and thousands separators)
 
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number.svg' />
-</a>
-
 ## About
 OK, let’s fix international numbers **parsing** and **validation** once and forever. I got the inspiration for this in a UI project because somehow the libraries we used didn’t do a great job, so I wrote my own parser, and this is a more polished version of it.
 
@@ -180,10 +175,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2017 Andreas Pizsa (http://github.com/AndreasPizsa), contributors.  
 
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number?ref=badge_large)
-
-## Sponsor
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/7WPHx1LeH7GTS36ys4vPHSLy/AndreasPizsa/parse-decimal-number.svg' />
-</a>
