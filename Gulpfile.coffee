@@ -16,13 +16,14 @@ gulp.task 'docs', ->
     .pipe verb dest:'README.md'
     .pipe gulp.dest './'
 
-gulp.task 'test', ['compile'], ->
-  gulp.src './dist/*.js'
+gulp.task 'test', ->
+  gulp.src './src/*.js'
   .pipe istanbul()
   .on 'finish',->
     gulp.src './test/*.{js,coffee,litcoffee}', read:false
     .pipe mocha
       reporter: 'spec'
+      compilers: 'coffee:coffee-script/register'
     .pipe istanbul.writeReports()
 
 gulp.task 'coveralls', ['test'], ->
