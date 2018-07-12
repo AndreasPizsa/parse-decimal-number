@@ -10,7 +10,7 @@ localSeparators = [
   {thousands:' ', decimal:','}  # 1 234,56   -- French
   {thousands:',', decimal:'/'}  # 1,234/56   -- Persian (Iran)
   {thousands:' ', decimal:'-'}  # 1 234-56   -- Kazakhstan
-  {thousands:' ', decimal:' '}  # 1 234.56   -- Estonia
+  {thousands:' ', decimal:'.'}  # 1 234.56   -- Estonia
 ]
 
 buildNumber = (max,doFraction,separators)->
