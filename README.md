@@ -17,7 +17,7 @@ These are the design goals:
 In it’s simplest form, you just use it as a `parseFloat` replacement.
 
 ## Install
-#### Install with [npm](npmjs.org)
+#### Install with [npm](https://npmjs.org)
 
 ```bash
 npm i parse-decimal-number --save
