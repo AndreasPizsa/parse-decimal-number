@@ -175,4 +175,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## License
 Copyright (c) 2017 Andreas Pizsa (http://github.com/AndreasPizsa), contributors.  
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FAndreasPizsa%2Fparse-decimal-number?ref=badge_large) [![Greenkeeper badge](https://badges.greenkeeper.io/AndreasPizsa/parse-decimal-number.svg)](https://greenkeeper.io/)
