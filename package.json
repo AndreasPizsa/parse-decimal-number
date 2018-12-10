@@ -44,7 +44,7 @@
   "devDependencies": {
     "cldr": "4.13.0",
     "coffee-script": "1.12.7",
-    "gulp": "3.9.1",
+    "gulp": "4.0.0",
     "gulp-blanket-mocha": "0.0.4",
     "gulp-coffee": "3.0.3",
     "gulp-coveralls": "0.1.4",
