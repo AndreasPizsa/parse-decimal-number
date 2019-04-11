@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/AndreasPizsa/parse-decimal-number",
   "devDependencies": {
-    "cldr": "4.13.0",
+    "cldr": "5.2.0",
     "coffee-script": "1.12.7",
     "gulp": "3.9.1",
     "gulp-blanket-mocha": "0.0.4",
